@@ -1,0 +1,53 @@
+  138  docker-compose ps -a
+  139  docker-compose ps -a
+  140  docker-compose up
+  141  clear
+  142  ll
+  143  pip3 list
+  144  pip3 install pipenv
+  145  pip3 list
+  146  pip list
+  147  clear
+  148  ll
+  149  pipenv
+  150  pipenv shell
+  151  piplist
+  152  source ~/.zshrc
+  153  pipenv
+
+altgraph   0.17.2
+certifi    2023.7.22
+distlib    0.3.7
+future     0.18.2
+macholib   1.15.2
+pip        23.2.1
+setuptools 68.1.2
+six        1.15.0
+wheel      0.37.0
+
+
+Defaulting to user installation because normal site-packages is not writeable
+Collecting pipenv
+  Obtaining dependency information for pipenv from https://files.pythonhosted.org/packages/eb/ce/78a7877a6fd1867a5812ba7d717379c28983750d4655b96dcd2feb9144c2/pipenv-2023.8.28-py3-none-any.whl.metadata
+  Using cached pipenv-2023.8.28-py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: certifi in /Users/thaveesha/Library/Python/3.9/lib/python/site-packages (from pipenv) (2023.7.22)
+Requirement already satisfied: setuptools>=67.0.0 in /Users/thaveesha/Library/Python/3.9/lib/python/site-packages (from pipenv) (68.1.2)
+Collecting virtualenv>=20.24.2 (from pipenv)
+  Obtaining dependency information for virtualenv>=20.24.2 from https://files.pythonhosted.org/packages/17/8d/6989e5dcd812520cbf9f31be2b08643ae3a895586601bbab501df8ed6e54/virtualenv-20.24.3-py3-none-any.whl.metadata
+  Downloading virtualenv-20.24.3-py3-none-any.whl.metadata (4.5 kB)
+Requirement already satisfied: distlib<1,>=0.3.7 in /Users/thaveesha/Library/Python/3.9/lib/python/site-packages (from virtualenv>=20.24.2->pipenv) (0.3.7)
+Collecting filelock<4,>=3.12.2 (from virtualenv>=20.24.2->pipenv)
+  Obtaining dependency information for filelock<4,>=3.12.2 from https://files.pythonhosted.org/packages/52/90/45223db4e1df30ff14e8aebf9a1bf0222da2e7b49e53692c968f36817812/filelock-3.12.3-py3-none-any.whl.metadata
+  Downloading filelock-3.12.3-py3-none-any.whl.metadata (2.7 kB)
+Collecting platformdirs<4,>=3.9.1 (from virtualenv>=20.24.2->pipenv)
+  Obtaining dependency information for platformdirs<4,>=3.9.1 from https://files.pythonhosted.org/packages/14/51/fe5a0d6ea589f0d4a1b97824fb518962ad48b27cd346dcdfa2405187997a/platformdirs-3.10.0-py3-none-any.whl.metadata
+  Downloading platformdirs-3.10.0-py3-none-any.whl.metadata (11 kB)
+Collecting typing-extensions>=4.7.1 (from filelock<4,>=3.12.2->virtualenv>=20.24.2->pipenv)
+  Obtaining dependency information for typing-extensions>=4.7.1 from https://files.pythonhosted.org/packages/ec/6b/63cc3df74987c36fe26157ee12e09e8f9db4de771e0f3404263117e75b95/typing_extensions-4.7.1-py3-none-any.whl.metadata
+  Downloading typing_extensions-4.7.1-py3-none-any.whl.metadata (3.1 kB)
+Using cached pipenv-2023.8.28-py3-none-any.whl (2.7 MB)
+Using cached virtualenv-20.24.3-py3-none-any.whl (3.0 MB)
+Using cached filelock-3.12.3-py3-none-any.whl (11 kB)
+Using cached platformdirs-3.10.0-py3-none-any.whl (17 kB)
+Using cached typing_extensions-4.7.1-py3-none-any.whl (33 kB)
+Installing collected packages: typing-extensions, platformdirs, filelock, virtualenv, pipenv
