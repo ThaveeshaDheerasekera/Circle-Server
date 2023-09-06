@@ -14,6 +14,7 @@ services:
       - ./app:/app
     environment:
       - SECRET_KEY=devsecretkey
+      - ALLOWED_HOSTS=0.0.0.0
       - DEBUG=1
       - DB_HOST=db
       - DB_NAME=circleDB
