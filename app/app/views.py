@@ -3,7 +3,7 @@ from .models import Note
 from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework.response import Response
-from .serializers import EntriesSerializer
+from .serializers import LogsSerializer
 from rest_framework.decorators import api_view
 
 logger = logging.getLogger(__name__)
@@ -25,7 +25,7 @@ def list_and_create_entry(request, username):
     if request.method == 'GET':
         try:
             logs = Note.objects.filter(user=user)
-            serializer = EntriesSerializer(logs, many=True)
+            serializer = LogsSerializer(logs, many=True)
             return Response({'logs': serializer.data}, status=status.HTTP_200_OK)
         except Exception as e:
             error_message = str(e)
@@ -35,9 +35,9 @@ def list_and_create_entry(request, username):
     # createEntry method
     elif request.method == 'POST':
         try:
-            serializer = EntriesSerializer(data=request.data)
+            serializer = LogsSerializer(data=request.data)
             if serializer.is_valid():
-                serializer.save()  # Save the created entry
+                serializer.save()  # Save the created log
                 return Response(serializer.data, status=status.HTTP_201_CREATED)
             else:
                 return Response({'error': serializer.errors}, status=status.HTTP_400_BAD_REQUEST)

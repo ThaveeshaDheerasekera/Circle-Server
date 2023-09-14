@@ -51,11 +51,13 @@ INSTALLED_APPS = [
 
     # Installed libraries
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -94,7 +96,11 @@ DATABASES = {
         'HOST': os.environ.get('DB_HOST'),
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PWD'),
-    }
+    },
+    # 'TEST': {
+    #     'ENGINE': 'django.db.backends.sqlite3',  # You can use a different database engine for testing if needed.
+    #     'NAME': ':memory:',  # Use an in-memory database for testing for better performance.
+    # },
 }
 
 
@@ -138,3 +144,23 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ]
+}
+
+'''
+Permissions:
+AllowAny
+IsAuthenticated
+IsAdminUser
+IsAuthenticatedOrReadOnly
+'''
+
+# CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000"
+]
+CORS_ALLOW_CREDENTIALS = True
